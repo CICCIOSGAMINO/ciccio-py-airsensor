@@ -1,0 +1,29 @@
+name: ciccio-py-airsensor
+base: core18 
+version: '0.2.0'
+summary: Easy python adafruit serial reader for airsensor 
+description: |
+  Easy python adafruit serial reader for airsensor, ... 
+
+architectures:
+  - build-on: amd64
+    run-on:  amd64
+  - build-on: armhf
+    run-on: armhf
+
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+
+parts:
+  py-part:
+    plugin: python
+    python-version: python3
+    source: . 
+    python-packages:
+      - pyserial
+      - adafruit-io
+
+apps:
+  ciccio-py-airsensor:
+    command: bin/airsensor
+    plugs: [serial-port]
