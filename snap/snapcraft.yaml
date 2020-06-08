@@ -1,6 +1,6 @@
 name: ciccio-py-airsensor
 base: core18 
-version: '0.2.0'
+version: '0.3.0'
 summary: Easy python adafruit serial reader for airsensor 
 description: |
   Easy python adafruit serial reader for airsensor, ... 

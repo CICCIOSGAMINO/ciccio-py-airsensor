@@ -1,12 +1,21 @@
+# import pyserial and adafruit-io
 import serial, time, os
 from Adafruit_IO import Client
-aio = Client('alexleoleo', 'aio_tIkm200lkzJKnPlPI6YwqLrkxnU1')
- 
-ser = serial.Serial ('/dev/ttyUSB0')
 
-print(os.getenv('PY_CLIENT', ''))
-print(os.getenv('PY_KEY', ''))
- 
+# read the env 
+pySerial = os.getenv('PY_SERIAL', '')
+pyClient = os.getenv('PY_CLIENT', '')
+pyKey = os.getenv('PY_KEY', '')
+
+print("SERIAL-PORT: " + pySerial)
+print("ADAFRUIT-CLIENT: " + pyClient)
+print("ADAFRUIT-KEY: " + pyKey)
+
+# init adafruit-io and serial 
+aio = Client(pyClient, pyKey)
+ser = serial.Serial (pySerial)
+
+# infinite loop 
 while True:
     data = []
     for index in range (0,10):
