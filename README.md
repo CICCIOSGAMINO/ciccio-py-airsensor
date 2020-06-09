@@ -9,6 +9,7 @@ https://github.com/CICCIOSGAMINO/py-airsensor
 ## env 
 To use the app you need two environment variable with valid values: 
 
++ PY_SERIAL=serial_port
 + PY_CLIENT=adafruit_client
 + PY_KEY=adafruit_api_key
 
@@ -33,4 +34,10 @@ Instsall snap
 sudo apt update 
 sudo apt install snapd 
 sudo reboot 
+```
+
+## Install the app
+Now it's time to install the app, with snap can be easy uhg ? 
+```bash
+sudo snap install ciccio-py-airsensor
 ```
